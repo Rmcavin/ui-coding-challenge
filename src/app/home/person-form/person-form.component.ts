@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { PersonService } from '../../shared/services/person.service';
 
 @Component({
   selector: 'app-person-form',
@@ -8,7 +9,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class PersonFormComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private personService: PersonService) { }
 
   personForm: FormGroup;
 
@@ -17,8 +18,9 @@ export class PersonFormComponent implements OnInit {
   }
 
   /** Called when a new person has been entered and submitted */
-  submitResult() {
-    console.log(this.personForm.value);
+  submitResult(): void {
+    this.personService.addPeople(this.personForm.value);
+    this.personForm.reset();
   }
 
 }

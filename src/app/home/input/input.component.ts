@@ -16,6 +16,7 @@ export class InputComponent implements OnInit, OnDestroy {
   @Input() parentFormGroup: FormGroup;
   @Input() controlName: string;
   @Input() text: string;
+  @Input() type = 'text';
   @Input() placeholder?: string;
   @Input() validator?: string;
   inputControl: FormControl = new FormControl('');

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { People } from '../../shared/models/People';
+import { PersonService } from '../../shared/services/person.service';
 
 @Component({
   selector: 'app-data-table',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataTableComponent implements OnInit {
 
-  constructor() { }
+  constructor(private personService: PersonService) { }
+
+  peopleData: [People];
 
   ngOnInit() {
+    this.personService.getPeople().subscribe(people => {
+      this.peopleData = people;
+      console.log('people in data table', people);
+    });
   }
 
 }

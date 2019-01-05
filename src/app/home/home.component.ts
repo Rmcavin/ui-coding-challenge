@@ -18,14 +18,14 @@ export class HomeComponent implements OnInit {
     this.personService.addPeople({
       firstName: 'Rachel',
       lastName: 'Cavin',
-      Friends: ['test'],
+      Friends: 3,
       Age: 27,
       Weight: 180});
 
     this.personService.addPeople({
       firstName: 'Testing',
       lastName: 'Test',
-      Friends: ['test'],
+      Friends: 2,
       Age: 27,
       Weight: 180});
   }
