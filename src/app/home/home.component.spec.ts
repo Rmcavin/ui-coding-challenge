@@ -4,7 +4,7 @@ import { PersonFormComponent } from './person-form/person-form.component';
 import { InputComponent } from './input/input.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('HomeComponent', () => {
@@ -20,7 +20,9 @@ describe('HomeComponent', () => {
         imports: [
           BrowserAnimationsModule,
           MatInputModule,
-          MatCardModule
+          MatCardModule,
+          FormsModule,
+          ReactiveFormsModule
         ],
         providers: [
           FormBuilder

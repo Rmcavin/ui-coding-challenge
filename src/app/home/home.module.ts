@@ -9,12 +9,14 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { DataTableComponent } from './data-table/data-table.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     PersonFormComponent,
-    InputComponent
+    InputComponent,
+    DataTableComponent
   ],
   imports: [
     CommonModule,

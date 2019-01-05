@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { PersonFormComponent } from './person-form.component';
-import { FormsModule, FormBuilder } from '@angular/forms';
+import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from '../input/input.component';
 import { HomeComponent } from '../home.component';
 import { MatCardModule } from '@angular/material/card';
@@ -22,7 +22,9 @@ describe('PersonFormComponent', () => {
         FormsModule,
         BrowserAnimationsModule,
         MatInputModule,
-        MatCardModule
+        MatCardModule,
+        FormsModule,
+        ReactiveFormsModule
       ],
       providers: [
         FormBuilder
