@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { People } from '../models/People';
 
 @Injectable({
@@ -9,6 +9,25 @@ export class PersonService {
 
   constructor() { }
 
-  private personList = new Subject<People>();
+  private personList = new BehaviorSubject([]);
 
+  /** Accesses the current value of the personList */
+  private getValue() {
+    return this.personList.value;
+  }
+
+  /** Allows subscribes to receive updates when the personList changes */
+  getPeople() {
+    return this.personList.asObservable();
+  }
+
+  /**
+   * Adds a new person to the list
+   * @param person the person object to be added
+   */
+  addPeople(person: People) {
+    const currentList = this.getValue();
+    currentList.push(person);
+    this.personList.next(currentList);
+  }
 }
