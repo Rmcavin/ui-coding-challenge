@@ -16,4 +16,9 @@ export class PersonFormComponent implements OnInit {
     this.personForm = this.formBuilder.group({});
   }
 
+  /** Called when a new person has been entered and submitted */
+  submitResult() {
+    console.log(this.personForm.value);
+  }
+
 }
