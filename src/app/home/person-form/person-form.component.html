@@ -3,9 +3,9 @@
     <div class="inputContainer">
       <app-input [parentFormGroup]="personForm" [controlName]="'firstName'" [text]="'First Name:'"></app-input>
       <app-input [parentFormGroup]="personForm" [controlName]="'lastName'"  [text]="'Last Name:'"></app-input>
-      <app-input [parentFormGroup]="personForm" [controlName]="'friends'"  [text]="'Friends:'"></app-input>
-      <app-input [parentFormGroup]="personForm" [controlName]="'age'"  [text]="'Age:'"></app-input>
-      <app-input [parentFormGroup]="personForm" [controlName]="'weight'"  [text]="'Weight:'"></app-input>
+      <app-input [parentFormGroup]="personForm" [controlName]="'friends'" [validator]="'digitValidator'" [text]="'Friends:'"></app-input>
+      <app-input [parentFormGroup]="personForm" [controlName]="'age'" [validator]="'digitValidator'" [text]="'Age:'"></app-input>
+      <app-input [parentFormGroup]="personForm" [controlName]="'weight'" [validator]="'digitValidator'" [text]="'Weight (lbs):'"></app-input>
     </div>
     <div class="buttonContainer">
       <button mat-raised-button color="primary" [disabled]="personForm.invalid" type="submit">Submit</button>

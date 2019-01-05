@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Input } from '@angular/core';
 import { Validators } from '@angular/forms';
+import { ValidatorsService } from '../../shared/services/validators.service';
 
 @Component({
   selector: 'app-input',
@@ -10,20 +11,20 @@ import { Validators } from '@angular/forms';
 })
 export class InputComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  constructor(private validatorsService: ValidatorsService) { }
 
   @Input() parentFormGroup: FormGroup;
   @Input() controlName: string;
   @Input() text: string;
   @Input() placeholder?: string;
-  // @Input() validator: string;
-  inputControl: FormControl = new FormControl('', [Validators.required]);
+  @Input() validator?: string;
+  inputControl: FormControl = new FormControl('');
 
+  /** Attach the control to the form, add the correct validators (required is default) */
   ngOnInit() {
-    console.log(this.controlName);
+    const activeValidators = this.validator ? [Validators.required, this.validatorsService[this.validator]] : [Validators.required];
     this.parentFormGroup.addControl(this.controlName, this.inputControl);
-    // TODO: add validation
-    console.log(this.parentFormGroup);
+    this.parentFormGroup.get(this.controlName).setValidators(activeValidators);
   }
 
   /** When this component dismounts, it needs to be removed from the form */
