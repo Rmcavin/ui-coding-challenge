@@ -1,0 +1,15 @@
+<mat-card class="optionsCard">
+    <form [formGroup]="optionsForm" (ngSubmit)="submitResult()">
+      <div class="selectContainer">
+        <!-- Chart Types -->
+        <app-select [options]="chartOptions" [parentFormGroup]="optionsForm" [controlName]="'chartType'" [text]="'1. Select a Chart Type.'"></app-select>
+        <!-- Data Options -->
+        <app-select [options]="activeOptions" [parentFormGroup]="optionsForm" [controlName]="'dataSet'" [text]="'2. Select a Data Set.'"></app-select>
+      </div>
+      <div class="buttonContainer">
+        <button mat-raised-button color="primary" [disabled]="optionsForm.invalid" type="submit">Submit</button>
+      </div>
+    </form>
+  </mat-card>
+  
+  
