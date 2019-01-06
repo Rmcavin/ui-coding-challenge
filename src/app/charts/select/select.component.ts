@@ -10,7 +10,7 @@ export class SelectComponent implements OnInit, OnChanges, OnDestroy {
 
   constructor() { }
 
-  @Input() options: [string];
+  @Input() options: string[];
   @Input() parentFormGroup: FormGroup;
   @Input() controlName: string;
   @Input() text: string;

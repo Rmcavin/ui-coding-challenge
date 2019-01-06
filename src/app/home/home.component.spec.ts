@@ -6,6 +6,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material';
+import { DataTableComponent } from './data-table/data-table.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -16,17 +18,20 @@ describe('HomeComponent', () => {
       declarations: [
         HomeComponent,
         PersonFormComponent,
-        InputComponent],
-        imports: [
-          BrowserAnimationsModule,
-          MatInputModule,
-          MatCardModule,
-          FormsModule,
-          ReactiveFormsModule
-        ],
-        providers: [
-          FormBuilder
-        ]
+        InputComponent,
+        DataTableComponent
+      ],
+      imports: [
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatCardModule,
+        MatTableModule,
+        FormsModule,
+        ReactiveFormsModule
+      ],
+      providers: [
+        FormBuilder
+      ]
     })
     .compileComponents();
   }));

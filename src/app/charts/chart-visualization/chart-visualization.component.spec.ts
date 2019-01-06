@@ -16,6 +16,8 @@ describe('ChartVisualizationComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ChartVisualizationComponent);
     component = fixture.componentInstance;
+    component.chartSelection = {chartType: 'Frequency', dataSet: 'First Name'};
+    component.chartData = [{name: 'Rachel', frequency: 10}, {name: 'Test', frequency: 5}]
     fixture.detectChanges();
   });
 
