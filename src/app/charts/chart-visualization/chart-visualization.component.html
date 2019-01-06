@@ -1,3 +1,13 @@
-<p>
-  chart-visualization works!
-</p>
+<section *ngIf="chartData; else noDataMessage">
+  <div *ngIf="chartSelection" id="chartContainer">
+
+  </div>
+</section>
+
+<ng-template #noDataMessage>
+  <mat-card class="warningCard">
+    <div class="warning noData">
+      No data has been entered yet, use the data tab to add some!
+    </div>
+  </mat-card>
+</ng-template>
