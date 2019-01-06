@@ -1,4 +1,4 @@
-<section *ngIf="initialData; else noDataMessage">
+<section *ngIf="initialData.length; else noDataMessage">
   <app-chart-options (submission)="optionsSelected($event)"></app-chart-options>
 </section>
 

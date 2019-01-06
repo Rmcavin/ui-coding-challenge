@@ -15,14 +15,7 @@ export class ChartVisualizationComponent implements OnInit, OnChanges {
   constructor() {}
   @Input() chartSelection: Options;
   @Input() chartData: FrequencyData[];
-
-  width: number;
-  height: number;
-  margin = {top: 20, right: 20, bottom: 30, left: 40};
-  x: any;
-  y: any;
   svg: any;
-  g: any;
 
   ngOnInit() {
     this.visualize(this.chartSelection.chartType);
@@ -255,10 +248,10 @@ export class ChartVisualizationComponent implements OnInit, OnChanges {
            return tooltip.style('visibility', 'hidden');
          });
 
-    svg.append('g')
+    main.append('g')
       .call(xAxis);
 
-    svg.append('g')
+    main.append('g')
       .call(yAxis);
   }
 }

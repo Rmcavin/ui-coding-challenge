@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Options } from 'src/app/shared/models/options';
 import { PersonService } from '../shared/services/person.service';
 import { ChartsService } from '../shared/services/charts.service';
@@ -10,7 +10,7 @@ import { FrequencyData } from '../shared/models/frequencyData';
   templateUrl: './charts.component.html',
   styleUrls: ['./charts.component.sass']
 })
-export class ChartsComponent implements OnInit {
+export class ChartsComponent implements OnInit, OnDestroy {
 
   constructor(private personService: PersonService, private chartService: ChartsService) { }
 
@@ -40,7 +40,13 @@ export class ChartsComponent implements OnInit {
   getData() {
     this.dataSubscription = this.personService.getPeople().subscribe(people => {
       this.initialData = people;
+      console.log('initial data?', this.initialData);
     });
+  }
+
+  /** Removes subscription before destroying component */
+  ngOnDestroy() {
+    this.dataSubscription.unsubscribe();
   }
 
 }

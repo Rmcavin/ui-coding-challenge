@@ -22,6 +22,10 @@ export class SelectComponent implements OnInit, OnChanges, OnDestroy {
     this.parentFormGroup.get(this.controlName).setValidators([Validators.required]);
   }
 
+  /**
+   * resets the form when new options come in, this enables select 2 to rely on/reset via select 1
+   * @param changes input changes from parent
+   */
   ngOnChanges(changes: SimpleChanges) {
     if (changes.hasOwnProperty('options')) {
       this.selectControl.reset();
