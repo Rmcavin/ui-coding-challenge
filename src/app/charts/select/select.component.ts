@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,7 +6,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.sass']
 })
-export class SelectComponent implements OnInit, OnDestroy {
+export class SelectComponent implements OnInit, OnChanges, OnDestroy {
 
   constructor() { }
 
@@ -21,6 +20,12 @@ export class SelectComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.parentFormGroup.addControl(this.controlName, this.selectControl);
     this.parentFormGroup.get(this.controlName).setValidators([Validators.required]);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.hasOwnProperty('options')) {
+      this.selectControl.reset();
+    }
   }
 
   /** When this component dismounts, it needs to be removed from the form */

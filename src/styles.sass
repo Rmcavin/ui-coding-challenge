@@ -2,9 +2,9 @@
 // Import material theming functions
 @import '~@angular/material/theming'
 
-$app-primary: mat-palette($mat-grey);
-$app-accent:  mat-palette($mat-light-blue);
-$app-warn:    mat-palette($mat-pink);
+$app-primary: mat-palette($mat-deep-purple);
+$app-accent:  mat-palette($mat-amber);
+$app-warn:    mat-palette($mat-red);
 
 $primary: mat-color($app-primary);
 $accent: mat-color($app-accent);
@@ -12,4 +12,11 @@ $warn: mat-color($app-warn);
 
 .warning 
   color: $warn
+  text-align: center
   font-weight: bold
+
+.bar 
+  fill: $primary
+
+.bar:hover 
+  fill: $accent

@@ -9,7 +9,7 @@ export class PersonService {
 
   constructor() { }
 
-  private personList = new BehaviorSubject<[People]>(null);
+  private personList = new BehaviorSubject<People[]>(null);
 
   /** Accesses the current value of the personList */
   private getValue() {

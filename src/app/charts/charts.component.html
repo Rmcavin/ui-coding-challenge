@@ -1,7 +1,15 @@
-<section>
+<section *ngIf="initialData; else noDataMessage">
   <app-chart-options (submission)="optionsSelected($event)"></app-chart-options>
 </section>
 
-<section>
-  <app-chart-visualization [chartSelection]="selectedOptions"></app-chart-visualization>
+<section *ngIf="chartData">
+  <app-chart-visualization [chartData]="chartData" [chartSelection]="selectedOptions"></app-chart-visualization>
 </section>
+
+<ng-template #noDataMessage>
+    <mat-card class="warningCard">
+      <div class="warning noData">
+        No data has been entered yet, use the data tab to add some!
+      </div>
+    </mat-card>
+  </ng-template>

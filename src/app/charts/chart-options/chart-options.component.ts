@@ -13,7 +13,7 @@ export class ChartOptionsComponent implements OnInit, OnDestroy {
   @Output() submission = new EventEmitter();
   optionsForm: FormGroup;
   chartOptions = ['Frequency', 'Bubble', 'Scatter'];
-  frequencyOptions = ['First Name', 'Last Name', 'Age', 'Friends', 'Width']; // for both frequency and bubble
+  frequencyOptions = ['First Name', 'Last Name', 'Age', 'Friends', 'Weight']; // for both frequency and bubble
   scatterOptions = ['Age and Friends', 'Age and Weight', 'Weight and Friends'];
   activeOptions: string[];
   formChanges;

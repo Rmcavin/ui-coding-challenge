@@ -1,13 +1,4 @@
-<section *ngIf="chartData; else noDataMessage">
-  <div *ngIf="chartSelection" id="chartContainer">
 
-  </div>
-</section>
+<svg id="chart-svg" width="900" height="500">
 
-<ng-template #noDataMessage>
-  <mat-card class="warningCard">
-    <div class="warning noData">
-      No data has been entered yet, use the data tab to add some!
-    </div>
-  </mat-card>
-</ng-template>
+
