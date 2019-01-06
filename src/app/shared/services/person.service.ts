@@ -9,7 +9,7 @@ export class PersonService {
 
   constructor() { }
 
-  private personList = new BehaviorSubject([]);
+  private personList = new BehaviorSubject<[People]>(null);
 
   /** Accesses the current value of the personList */
   private getValue() {
@@ -22,12 +22,23 @@ export class PersonService {
   }
 
   /**
-   * Adds a new person to the list
+   * Adds a new person to the list, if the list hasn't been started it creates it
+   * Modifies the typing as needed to convert the string output of the forms
    * @param person the person object to be added
    */
   addPeople(person: People) {
+    const typedPerson = {
+      ...person,
+      friends: Number(person.friends),
+      weight: Number(person.weight),
+      age: Number(person.age)
+    };
     const currentList = this.getValue();
-    currentList.push(person);
-    this.personList.next(currentList);
+    if (Array.isArray(currentList)) {
+      currentList.push(typedPerson);
+      this.personList.next(currentList);
+    } else {
+      this.personList.next([typedPerson]);
+    }
   }
 }

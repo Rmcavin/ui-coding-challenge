@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Input } from '@angular/core';
-import { Validators } from '@angular/forms';
 import { ValidatorsService } from '../../shared/services/validators.service';
 
 @Component({

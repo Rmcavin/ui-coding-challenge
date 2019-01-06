@@ -18,15 +18,15 @@ export class HomeComponent implements OnInit {
     this.personService.addPeople({
       firstName: 'Rachel',
       lastName: 'Cavin',
-      Friends: 3,
-      Age: 27,
-      Weight: 180});
+      friends: 3,
+      age: 27,
+      weight: 180});
 
     this.personService.addPeople({
       firstName: 'Testing',
       lastName: 'Test',
-      Friends: 2,
-      Age: 27,
-      Weight: 180});
+      friends: 2,
+      age: 27,
+      weight: 180});
   }
 }

@@ -5,8 +5,16 @@ import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: './home/home.module#HomeModule',
+    redirectTo: 'data',
     pathMatch: 'full'
+  },
+  {
+    path: 'data',
+    loadChildren: './home/home.module#HomeModule',
+  },
+  {
+    path: 'charts',
+    loadChildren: './charts/charts.module#ChartsModule'
   },
   {
     path: 'not-found',
