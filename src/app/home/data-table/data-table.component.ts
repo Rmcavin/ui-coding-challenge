@@ -21,5 +21,9 @@ export class DataTableComponent implements OnInit {
     });
   }
 
+  clear() {
+    this.personService.clearPeople();
+  }
+
 
 }

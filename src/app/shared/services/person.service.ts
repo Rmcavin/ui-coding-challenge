@@ -9,7 +9,11 @@ export class PersonService {
 
   constructor() { }
 
-  private personList = new BehaviorSubject<People[]>(null);
+  private initialPersonList = [
+    {firstName: 'Rachel', lastName: 'Cavin', friends: 15, age: 27, weight: 160}
+  ];
+
+  private personList = new BehaviorSubject<People[]>(this.initialPersonList);
 
   /** Accesses the current value of the personList */
   private getValue() {
@@ -19,6 +23,11 @@ export class PersonService {
   /** Allows subscribes to receive updates when the personList changes */
   getPeople() {
     return this.personList.asObservable();
+  }
+
+  /** Clears the people list in the subject state */
+  clearPeople() {
+    this.personList.next([]);
   }
 
   /**
