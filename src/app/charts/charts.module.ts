@@ -9,14 +9,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { SelectComponent } from './select/select.component';
-import { FrequencyChartComponent } from './frequency-chart/frequency-chart.component';
+import { ChartVisualizationComponent } from './chart-visualization/chart-visualization.component';
 
 @NgModule({
   declarations: [
     ChartsComponent,
     ChartOptionsComponent,
     SelectComponent,
-    FrequencyChartComponent
+    ChartVisualizationComponent
   ],
   imports: [
     CommonModule,

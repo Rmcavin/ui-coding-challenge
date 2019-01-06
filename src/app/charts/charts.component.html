@@ -1,1 +1,7 @@
-<app-chart-options (submission)="optionsSelected($event)"></app-chart-options>
+<section>
+  <app-chart-options (submission)="optionsSelected($event)"></app-chart-options>
+</section>
+
+<section *ngIf="selectedOptions">
+  <app-chart-visualization [chartSelection]="selectedOptions"></app-chart-visualization>
+</section>
