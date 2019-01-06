@@ -23,13 +23,17 @@ export class ChartsService {
   };
 
   /**
-   * Prepares data for scatter plots
+   * Prepares data for scatter plots, [[x,y], ...]
    * @param selection the selected data
    * @param data the unfiltered data
    */
   scatterPlotPrep(selection: Options, data: People[]) {
     const dataField = this.dataMap[selection.dataSet];
-    const preparedData = this.filterData(dataField, data);
+    const filteredData = this.filterData(dataField, data);
+    const preparedData = [];
+    for (const elem of filteredData) {
+      preparedData.push([elem[dataField[0]], elem[dataField[1]]]);
+    }
     return preparedData;
   }
 

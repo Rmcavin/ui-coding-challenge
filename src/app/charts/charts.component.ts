@@ -16,7 +16,7 @@ export class ChartsComponent implements OnInit {
 
   selectedOptions: Options;
   initialData: People[];
-  chartData: FrequencyData[]; // | ScatterData[]
+  chartData: FrequencyData[] | any[]; // add a scatterData interface
   dataSubscription;
 
   ngOnInit() {
@@ -30,12 +30,9 @@ export class ChartsComponent implements OnInit {
   optionsSelected(options: Options): void {
     this.selectedOptions = options;
     if (this.selectedOptions.chartType === 'Scatter') {
-      // const data = this.chartService.scatterPlotPrep(this.chartSelection, this.chartData);
-      // console.log(data);
-    } else if (this.selectedOptions.chartType === 'Frequency') {
+      this.chartData = this.chartService.scatterPlotPrep(this.selectedOptions, this.initialData);
+    } else if (this.selectedOptions.chartType === 'Frequency' || this.selectedOptions.chartType === 'Bubble') {
       this.chartData = this.chartService.calculateFrequency(this.selectedOptions, this.initialData);
-    } else {
-      // bubble
     }
   }
 
