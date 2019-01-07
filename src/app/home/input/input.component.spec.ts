@@ -36,6 +36,7 @@ describe('InputComponent', () => {
     component.parentFormGroup = formBuilder.group({});
     component.text = 'Test Input';
     component.controlName = 'testInput';
+    component.maxLength = 20;
     fixture.detectChanges();
   });
 
