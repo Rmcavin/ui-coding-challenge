@@ -17,13 +17,13 @@ Overall I feel I did well on the requirements, given the limitations of the time
   * I wanted to add CRUD operations on each individual entry in the data table, but I didn't end up having time. This would involve splicing the array with data changes and updating the subject again.
 * Display results in your choice of visualization using D3.
   * I got a bit inspired on this point and ended up making 3 different visualizations that can be rendered in 13 different ways depending on data provided. The charts I chose were frequency charts, bubble charts, and scatter plots. I made a neat second form in the charts tab that allows users to switch between visualizations easily.
-  * If I had more time I would have probably moved the d3 code into a service and cleaned it up a bit. The chart component got pretty cluttered with the 3 different chart types, but I like that one component handles all the charts with a single svg element. I was rusty with d3 so relearning it ate up a lot of the time spent. 
+  * If I had more time I would have probably moved the d3 code into a service and cleaned it up a bit. The chart component got pretty cluttered with the 3 different chart types, but I like that one component handles all the charts with a single svg element. I was rusty with d3 so relearning it ate up a lot of the time spent. The axis need labels and the scatter plot needs work too in terms of dependent/independent variables being more intentional.
 * BONUS: Write module as an Angular Element.
   * I ran out of time and didn't end up adding this, however I read a few tutorials and it seems straight forward. I had planned on adding validator messages to conditionally appear with different error types, and display them using the element.
 * Documentation
   * All throughout the app I wrote JSDOC annotations on functions, and addititional comments where I felt necessary. I like JSDoc annotations because VS Code's intellisense picks them up, so you can easily see function descriptions. I also included compodoc, which is a documentation generator I really like.
 * Tests
-  * I didn't write nearly as many tests as I would have liked, but I ensured testbeds were configured and did write a few. I chose to concentrate on the services, chartsService in particular, because they contain the most critical and testable code. If I had more time, testing definitely would have better coverage.
+  * I didn't write nearly as many tests as I would have liked, but I ensured testbeds were configured. I chose to concentrate on the chartsService in particular, because it contains the most critical and testable code. If I had more time, testing definitely would have better coverage.
 
 
 ## CLI Output
