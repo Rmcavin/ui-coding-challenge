@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "docs": "./node_modules/.bin/compodoc -p src/tsconfig.app.json --theme vagrant --hideGenerator --name Document_Verification --serve --open"
+    "docs": "./node_modules/.bin/compodoc -p src/tsconfig.app.json --theme vagrant --hideGenerator --name Document_Verification --serve --open",
+    "ghpages": "ng build --prod --base-href https://rmcavin.github.io/ui-coding-challenge/ --output-path docs"
   },
   "private": true,
   "dependencies": {
