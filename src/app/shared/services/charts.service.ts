@@ -28,7 +28,6 @@ export class ChartsService {
    * @param data the unfiltered data
    */
   scatterPlotPrep(selection: Options, data: People[]) {
-    console.log('selection', selection, 'data', data);
     const dataField = this.dataMap[selection.dataSet];
     const filteredData = this.filterData(dataField, data);
     const preparedData = [];
