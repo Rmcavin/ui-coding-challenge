@@ -5,13 +5,14 @@
 This app was built in a weekend by Rachel Cavin as part of a prescribed coding challenge. It uses Angular 6, RxJS, D3, and Angular Material as core dependencies. The purpose of this app is to visualize data input by app users in bar charts, bubble charts, and scatter plots. I hope you like it!
 
 ## Quick Note
+This app is deployed on github pages - [Check it out here!](https://rmcavin.github.io/ui-coding-challenge/data)
+
 I added a documentation generator called compodoc to this project to give a high-level overview of what I've built. It shows all modules, components, etc and any JSDOC Annotations I wrote to accompany them. You can view it by running `npm run docs`.
 
 ## Requirements
 Overall I feel I did well on the requirements, given the limitations of the time provided. I think I built a small app that was both creative and technically challenging. Below is a breakdown of each requirement.
 * Create an input form using Material and insert the following fields: name, friends, age, weight.
   * I took a bit of creative liberty and added both a first and last name field, totalling 5. Fields have validators that differ depending on the type of input (text/number). Additionally, I added a material data table beneath the form so users can see the available data, as well as the option to clear all entered data. 
-  * If I had more time I would have made this section more responsive. I am still learning Material Angular and Sass (which I challenged myself with) so the styling took some getting used to. 
 * Save data (in memory) using an Angular service.
   * I used an RxJS subject to store state from the forms. The person.service.ts file is where this logic lives. Each new entry is appended to the previous list, and the subject is updated. This subject is subscribed to in a few places throughout the app so components can get multicasted updates as needed.
   * I wanted to add CRUD operations on each individual entry in the data table, but I didn't end up having time. This would involve splicing the array with data changes and updating the subject again.
